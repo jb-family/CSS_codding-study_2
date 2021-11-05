@@ -1,0 +1,424 @@
+﻿태그정보를 현재 일상생활에서 사용하는지 판단하기 위한사이트
+caniuse.com 여기서 검색하면 웹브라우저가 어디부터 어디까지 호환되는지
+그리고 사용하면 전세계적으로 몇퍼센트의 인구가 이용할수있다는 의미 엄청중요함
+
+
+*style*
+
+head 태그안에 들어가며 html태그의 중복되는값을 줄일수있음
+아래 태그대로 하면 글자가 다 빨간색으로 변함
+굉장히 중요한태그
+style태그안에 a라는것은 selector라고하며
+이 웹페이지의 모든 a태그를 설정한다라는 의미를 가짐
+
+
+style태그안에 색상을 지정하는방법은 3가지로 나누어짐
+
+1) style {color:red;} 
+2) style {color:rgb("255","100","200")}  = r(레드)g(그린)b(블루) 세가지색상을 섞어서 나타내는방법
+3) style {color:"#ff0000"} hex의 경우는 16진수로 이루어져있고 정해진코드가 있음 일반적으로 쓰이진않음
+
+
+
+style태그의 글자색깔을 바꾸는 방법은 2가지의 방법이 있음
+
+ex) 1) 헤드태그안에 style태그를 입력하는방법
+<head>
+<style>
+a {
+   color:red;  (색깔은 입력값에따라변함)
+}  
+</style> 
+
+
+</head>  
+헤드 태그안에 들어가는것은 style 태그라 부름
+
+ex) 2) 바디태그안에 style태그를 입력하는방법
+
+<body>
+<h1 style="color:red">Hello World</h1>
+</body>
+
+
+★부분적으로 style태그를 사용하고 싶을 때★
+아래와 같이 태그를 설정해놓으면 전체글자는 검은색이지만
+body태그안에 style태그를 걸어놓은 MiHyeon은 빨간색으로 표시됨
+<head>
+<style>
+a {
+   color:black;  (색깔은 입력값에따라변함)
+}  
+</style>
+</head>
+
+<body>
+  <li><a href="1.html">JongBin</a></li>
+  <li><a href="2.html" style="color:red"> MiHyeon</a></li>
+</body>
+body 태그안에 style이 들어가는 경우는 style 속성이라고 부름
+
+★웹사이트 상에서 보여지는 밑줄을 없애고 싶을 때★
+<head>
+<style>
+"oo"{
+   text-decoration:none;
+   }
+
+</style>
+</head>
+
+style 태그는 정보를 입력하고 마지막에 항상 세미콜론 입력해야함
+안그러면 어디서부터 어디까지가 하나의 값인지 인식하지못함
+무조건 style속성 입력후 마지막에 ; 입력
+
+
+글자크기 줄이거나크게하고싶을때
+h1 { 
+   font-size:"oo"px;
+   }
+위 h1태그는 달라질수있음
+
+글자정렬 text-align:"oo"
+
+글자를 가운데로 정렬하고 싶을때
+
+h1 {
+   font-size:"oo"px; text-align:center;
+   }
+
+글자를 왼쪽으로 정렬하고 싶을때
+
+h1 {
+   font-size:"oo"px; text-align:left;
+   }
+글자를 오른쪽으로 정렬하고 싶을때
+
+h1 {
+   font-size:"oo"px; text-align:right;
+   }
+
+글자를 왼쪽, 오른쪽 둘다 정렬하고 싶을때
+
+h1 {
+   font-size:"oo"px; text-align:justify;
+   }
+
+font-family:"글씨체(1)", "글씨체(2)", "글씨체(3)";
+이 의미는 글씨체(1)이 없으면 (2)가 나오게 (2)가없으면 글씨체(3)이 나오게 대체되게 하는 값임
+그래서 패밀리라고 지정함 
+또한 monospace는 글자의폭이 균등하게 나오게 설정할수있게함
+
+Serif란 문자의 끝 부분에 장식되어 있는 부가적인 짧은 선을 Serif라고 한다.
+원하지않을경우 sans-serif 라고 하면 글꼴만 변경되고 끝부분에 장식되는부분만 생기지않음
+
+font-weight:bold; = 글자를 굵게해주는값
+
+line-height:"oo" = 글자간 간격을말함
+
+
+font-size:"oo"px; = 브라우저 설정이 바뀌어도 바뀌지않고 수치고정
+font-size"oo"rem; = 브라우저 설정이 바뀌면 폰트의 수치도 변함
+
+
+style태그안에서 (selector)선택자의 우선순위는 id>class>일반태그임
+
+id는 style을지정할때 한가지만 지정해서 쓰는이름이며
+고유한id 하나밖에 쓸수없다.
+ex)
+
+<head>
+<style>
+  .saw{
+  color:gray;
+  }
+  #active{
+  color:red;
+  }
+</style>
+</head>
+<body> 
+<a href="1.html" class="saw">HTML</a
+>
+<a href="2.html" class="saw" id="active">CSS</a>  ("active"는 달라질수있음)
+</body>
+
+위와같이 태그입력하면 HTML은 회색 CSS는 빨간색으로 설정됨
+id태그인 #active의 경우 .saw와 같이 쓰였지만 우선순위가 높기때문에 빨간색으로 표기됨
+
+
+class는 하나의 그룹으로 묶어서 스타일을 지정하고자할때 쓰임
+class는 하나의 문서에 여러번 쓸수있다. 고유값아님
+class="oo" 
+
+ex) 
+<head>
+<style>
+  .saw{
+  color:gray;
+  }
+</style>
+</head>
+<body> 
+<a href="1.html" class="saw">HTML</a
+>
+<a href="2.html" class="saw active">CSS</a>
+</body>
+
+위 태그의 의미는 class="saw"라는 그룹의 색깔을 회색으로 
+변경하고자 할때를 의미함
+
+<head>
+<style>
+  .saw{
+  color:gray;
+  }
+  .active{
+   color:red;
+   }
+</style>
+</head>
+<body> 
+<a href="2.html" class="saw active">CSS</a>
+</body>
+
+위 태그의 의미는 class그룹인 saw와 active 두가지가 쓰인형태임
+하지만 확인해보면 빨간색으로 표시가 되어있음.
+그 이유는 style태그안에 .saw보다 .active가 나중에 쓰였기 때문이며
+그 의미는 같은속성일경우 나중에 쓰이는 태그가 더 중요하다고 인식이 되기때문
+
+
+*아래와같이 값을 입력하면 ul안에 있는 li태그는 모두 빨간색으로 표시됨*
+ (ul태그안에서 또 분리하고싶을땐  style태그 밑에 ul li {color:red;} 입력하면 됨
+
+<style>
+  ul li{
+    color:red;
+  }
+</style>
+  </head>
+  <body>
+    <ul>
+      <li>HTML</li>
+      <li>CSS</li>
+      <li>JavaScript</li>
+    </ul>
+
+    <ol>
+      <li>HTML</li>
+      <li>CSS</li>
+      <li>JavaScript</li>
+    </ol>
+
+    <ul>
+      HTML
+      CSS
+      JavaScript
+    </ul>
+</body>
+
+
+배경을 표현하고싶을땐 background-color:"색상"; 입력하면 됨
+하나의 값을 같이 입력하고싶을땐 아래처럼 , 입력하면 ul태그ol태그 둘다 적용됨
+  ul,ol{
+    background-color: powderblue;
+  }
+
+
+
+★ 아래와 같이 태그했을 때 ★
+
+
+body태그 안에 있으며 제일위에있는 ol태그안에 id값을 입력하고나서
+head태그 안에 있는 #jong>li의 의미는 ol의 자식태그인
+<li>HTML</li> <li>CSS</li> <li>JavaScript</li>에만{ border:1px solid red; color:blue; } 값을 입력하고싶을때 사용됨
+만약 위처럼 id값없이 head태그안에 ol{border:1px solid red; color:blue;} 입력한다면 CSS태그안의 손자태그까지 모두 적용됨
+<ol>
+
+<style>
+  ul li{
+    color:red;
+  }
+  #jong>li{
+    border:1px solid red;
+    color:blue;
+  }
+  ul,ol{
+    background-color: powderblue;
+  }
+</style>
+<body>
+    <ul>
+      <li>HTML</li>
+      <li>CSS</li>
+      <li>JavaScript</li>
+    </ul>
+
+    <ol id="jong">
+      <li>HTML</li>
+      <li>CSS
+        <ol>
+          <li>selector</li>
+          <li>decoration</li>
+        </ol>
+      </li>
+      <li>JavaScript</li>
+    </ol>
+  </body>
+
+
+★가상클래스선택자를 선택했을때의 변화★
+a:visited{color:red;} = 방문한사이트가 빨간색으로 표시됨
+a:hover{color:yellow;} = 커서를 가져다놓으면 노란색으로 표시됨
+a:active{color:green;} = 커서를 선택하고있을때 초록색으로 표시됨
+a:focus{color:white;} = 탭키를 누르면 하얀색탭박스생성됨 엔터누르면 링크통해서 이동가능
+focus의 경우 input태그랑 혼합해서 이용가능하며 focus는 제일 마지막에 이용하는것이좋음 (여러가지 이유로)
+아래와 같이 태그 입력시 text박스 클릭시 배경은 검은색 글자의 색상은 흰색으로 변함
+<head>
+<style>
+input:focus {background-color:black; color:white;}
+</style>
+</head>
+
+<body>
+<input type="text">
+</body>
+
+
+
+
+*주석*
+style 태그를 사용할때 주석을 달아놓는법 (element는 태그랑 같은말)
+/*
+block level element  
+*/
+위 용어의 의미는 화면전체를 쓰는 태그들을 사용한다라는의미
+
+
+/*
+inline element
+*/
+위 용어의 의미는 자기 자신의 부피만큼을 갖는 태그를 사용한다라는의미
+
+*css box model 태그들*
+margin=border의 테두리 바깥부분의 설정
+border=글자부분의 테두리설정
+padding=내용과 테두리 사이의 간격설정
+content= 텍스트나 이미지의 내용설정
+width=글자의폭
+hight=글자의높이
+display:block;= 글자의 화면전체
+display:inline;= 글자가 가진 자기자신의부피
+border-style:"종류많음"; 단선인경우 solid
+
+전부 다 이렇게 사용함
+ex)
+<head>
+<style>
+
+"selector"{
+       border:5px solid red;
+       padding:20px;
+       margin:20px;
+       display:block;
+       width:100px;
+       }
+</style>
+</head>
+
+박스테두리가 아닌 밑줄만 표시하고싶을땐
+
+"selector"{
+       border-bottom:"oo"px solid black;
+       }
+
+※box 테두리 만들땐 검사버튼 이용해서 margin, border, padding 값 확인하면서 사용하기
+
+*그리드*
+
+<div> = 아무의미가없고 디자인으로만 사용되는 태그
+div는 block level emelemt와 동일하게 사용되므로 화면 전체를 사용하기때문에 줄바꿈기능이 됨
+<span> = 아무의미가없고 디자인으로만 사용되는 태그
+span은 inline level emelemt와 동일하게 사용되며 자기자신의 부피만큼 사용함
+
+div의 부모태그는 div임
+ex)
+<div>
+<div>"종빈이와미현이"</div>
+</div>
+
+
+*mediaquery*
+미디어태그(반응형디자인)는 아래 태그와 같이 입력하면
+화면의 크기가 800px이상인경우 보이지않게만든다는 의미
+반대로 min값이 max로 변경되면 800px이하인경우 보이지않게 만든다는의미
+<style>
+      div{
+        border:10px solid green;
+        font-size:60px;
+      }
+
+      @media(min-width:800px){
+      div{
+        display:none;
+      }
+    }
+    </style>
+
+
+css태그를 사용할때 중복을 피하는방법
+같은시트에 같은태그가 중복적으로 사용될 때 
+ex) <link rel="stylesheet" href="style.css">  ("style.css"는 변할수있음)
+위 값을 붙여넣고
+ 실제로 style.css라는 파일을 만들어 style태그값을 안에 붙여넣으면
+<link rel="stylesheet" href="style.css"> 한줄만 붙여넣기를 함으로써 중복되는것들을 방지할수있음
+가치적으로 훨씬높음
+
+
+
+다양한 선택자들
+* = 모든태그를 의미함
+"a"+"b"= 입력시 옆에있는 태그가 선택됨
+"a"~"b"= 입력시 a와 b사이까지의 모든 태그가 선택됨
+"a">"b"= 입력시 a의 직계자식인 b만을 선택하게됨
+"oo":first-child=입력시 중복된 값중에 첫번째로 입력한 값만 선택됨
+ex)
+
+<a>
+<orange>
+<orange>
+<orange>
+</a>
+orange:first-child 또는 a orange:first-child 입력하면됨 ( a orange:first-child 가 정확한표현)
+
+
+
+cascading규칙 (우선순위)
+하나의 태그에 css언어가 중첩되었을때 우선순위를 어떻게 할것인가?
+style>id>class>기본태그
+
+
+*box-sizing*
+box-sizing:border-box; = 값이다른 border를 같은값으로 설정해주는 것
+
+*position*
+position은 left와 right 중 left우선 top과 bottom 중 top우선적용
+{position:relative; left:100px; top:100px;} =오른쪽,위로 100px만큼 이동
+{position:static; left:100px; top:100px;} =이동안함
+
+
+★position:absolute/fixed★-어려움
+position:absolute(자식태그)의경우 position:relative(부모태그)설정되면 부모태그로 이동되며
+ 본인이 가지고있던 크기는 사라지며 본인의 크기만큼 변한다
+여기서 부모태그들중 relative 설정되지않으면 없는것으로 인식하며 설정된 relative부모태그만 부모로 인식함
+
+absolute는 left,top,right,bottom의 설정해줘야함
+
+ex) {position:absolute; left:0; top:0;}(자식태그) {position:relative}(부모태그) 부모로 이동
+ex) {position:absolute;}(자식태그) {position:relative}(부모태그) 부모밑으로 이동
+ex) {position:absolute; left:0; top:0;} 웹사이트기준 0,0으로 이동
+
+fixed = absolute와 거의 흡사하지만 {position:fixed} 로하게되면 스크롤이 있다고 가정하에 밑으로 내려도 위치 고정됨
+또한 width,height값을 지정하지않으면 부모가 없어지기때문에 본인의 크기만큼 변함
+ex) {position:fixed; left:0; top:0;} 웹사이트기준 0,0으로 이동
+ex) {position:fixed;} 부모밑으로 이동
