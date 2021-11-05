@@ -1,1 +1,1 @@
-# CSS_codding-test_2
+# CSS_codding-study_2
